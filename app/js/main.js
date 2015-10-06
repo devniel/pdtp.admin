@@ -5,6 +5,7 @@ var angular = require('angular');
 // angular modules
 require('angular-ui-router');
 require('./templates');
+require('./utils/_index');
 require('./controllers/_index');
 require('./services/_index');
 require('./directives/_index');
@@ -15,20 +16,21 @@ angular.element(document).ready(function() {
   var requires = [
     'ui.router',
     'templates',
-    'app.controllers',
-    'app.services',
-    'app.directives'
+    'pdtp.admin.utils',
+    'pdtp.admin.controllers',
+    'pdtp.admin.services',
+    'pdtp.admin.directives'
   ];
 
   // mount on window for testing
-  window.app = angular.module('app', requires);
+  window.app = angular.module('pdtp.admin', requires);
 
-  angular.module('app').constant('AppSettings', require('./constants'));
+  angular.module('pdtp.admin').constant('AppSettings', require('./constants'));
 
-  angular.module('app').config(require('./on_config'));
+  angular.module('pdtp.admin').config(require('./on_config'));
 
-  angular.module('app').run(require('./on_run'));
+  angular.module('pdtp.admin').run(require('./on_run'));
 
-  angular.bootstrap(document, ['app']);
+  angular.bootstrap(document, ['pdtp.admin']);
 
 });
