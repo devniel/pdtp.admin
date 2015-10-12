@@ -1,0 +1,93 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+      <base href="/">
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title ng-bind="pageTitle"></title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width">
+
+      <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:400,500,600,700,800,900' rel='stylesheet' type='text/css'>
+
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+      <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body ng-controller="LoginController">
+
+      <!-- 
+        HEADER
+      -->
+
+      <div class="header">
+        <div class="header-inner">
+          <div class="header-title"><span>Pondetuparte</span></div>
+
+          <!-- 
+            HEADER NAV
+          -->
+
+          <ul class="header-nav nav">
+
+            <!-- TODO : Dropdown menu -->
+           
+            <li>
+              <ul class="menu user-menu">
+                <img class="user-picture" src="https://avatars0.githubusercontent.com/u/1231888?v=3&s=460" />
+                <span class="user-name">Daniel Flores</span>
+                <div class="caret"></div>
+              </ul>
+            </li>
+
+           <!--<li><a href="#" title="Salir">salir</a></li>-->
+
+          </ul>
+
+        </div>
+      </div>
+
+      <!-- 
+        BODY
+      -->
+
+      <div class="body ">
+        <div class="layout-grid-12">
+
+          <!-- SIDEBAR -->
+
+          <div class="layout-col-3">
+            <div class="sidebar">
+
+              <!-- SIDEBAR MENU -->
+
+              <ul class="nav nav-vertical">
+                <li class="nav-title">Entidades</li>
+
+                <li><a class="link white" href="#" title="Usuarios">Usuarios</a></li>
+                
+                <li><a class="link white" href="/#/user-commitments/" title="Compromisos">Compromisos</a></li>
+                <li><a class="link white" href="#" title="Evidencias">Evidencias</a></li>
+                <li><a class="link white" href="#" title="Instituciones">Instituciones</a></li>
+
+                <li><a class="link white" href="#" title="Tipos de Instituciones">Tipos de Instituciones</a></li>
+                <li><a class="link white" href="#" title="Tipos de Compromisos">Tipos de Compromisos</a></li>
+
+              </ul>
+
+            </div>
+          </div>
+
+          <!-- MENU -->
+
+          <div class="layout-col-9">
+            <div class="main" ui-view>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <script src="js/main.js"></script>
+  </body>
+</html>

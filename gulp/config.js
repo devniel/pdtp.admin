@@ -8,24 +8,24 @@ module.exports = {
 
   'styles': {
     'src' : 'app/styles/**/*.scss',
-    'dest': 'build/css',
+    'dest': 'C:/Pon.de.tu.parte/public/assets/admin/css',
     'prodSourcemap': false,
     'sassIncludePaths': []
   },
 
   'scripts': {
     'src' : 'app/js/**/*.js',
-    'dest': 'build/js'
+    'dest': 'C:/Pon.de.tu.parte/public/assets/admin/js'
   },
 
   'images': {
     'src' : 'app/images/**/*',
-    'dest': 'build/images'
+    'dest': 'C:/Pon.de.tu.parte/public/assets/admin/images'
   },
 
   'fonts': {
     'src' : ['app/fonts/**/*'],
-    'dest': 'build/fonts'
+    'dest': 'C:/Pon.de.tu.parte/public/assets/admin/fonts'
   },
 
   'views': {
@@ -39,12 +39,13 @@ module.exports = {
 
   'gzip': {
     'src': 'build/**/*.{html,xml,json,css,js,js.map,css.map}',
-    'dest': 'build/',
+    'dest': 'C:/Pon.de.tu.parte/public/assets/admin/',
     'options': {}
   },
 
   'dist': {
-    'root'  : 'build'
+    //'root'  : 'build'
+    'root'    : 'C:/Pon.de.tu.parte/public/assets/admin'
   },
 
   'browserify': {
