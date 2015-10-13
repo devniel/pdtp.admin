@@ -2,11 +2,8 @@
 
 var app = require('./_index');
 
-app.controller('AppCtrl', function($scope, $state) {
+app.controller('AppCtrl', function($scope, $state, AuthService) {
 
-	console.log("WTF LEEROY JENCKINS !!!");
+	$scope.user = AuthService.user;
 
-	console.log("WTF");
-
-	console.log("SAY WAT");
-});
+});	

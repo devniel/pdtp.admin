@@ -17,21 +17,27 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $httpPr
 
 	$stateProvider
 	.state('Home', {
-		url: '/',
+		url: '/admin/',
 		controller: 'ExampleCtrl as home',
 		templateUrl: 'home.html',
+		title: 'Home'
+	})
+	.state('Users', {
+		url: '/admin/users',
+		controller: 'UsersCtrl',
+		templateUrl: 'users.html',
 		title: 'Home'
 	});
 
 	$stateProvider
 	.state('User Commitments', {
-		url: '/user-commitments/',
+		url: '/admin/user-commitments/',
 		controller: 'UserCommitmentsCtrl',
 		templateUrl: 'user-commitments.html',
 		title: 'Users Commitments'
 	});
 
-	$urlRouterProvider.otherwise('/');
+	$urlRouterProvider.otherwise('/admin/users');
 
 }
 

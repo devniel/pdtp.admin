@@ -3,6 +3,6 @@
 var angular = require('angular');
 var bulk = require('bulk-require');
 
-module.exports = angular.module('pdtp.admin.controllers', []);
+module.exports = angular.module('pdtp.admin.controllers', ['pdtp.admin.services', 'pdtp.admin.directives']);
 
 bulk(__dirname, ['./!(*_index|*.spec).js']);

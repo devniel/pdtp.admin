@@ -13,9 +13,9 @@
 
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
-      <link rel="stylesheet" href="css/main.css">
+      <link rel="stylesheet" href="/assets/admin/css/main.css">
   </head>
-  <body ng-controller="AppCtrl">
+  <body ng-controller="AppCtrl" ng-cloak>
 
       <!-- 
         HEADER
@@ -23,25 +23,25 @@
 
       <div class="header">
         <div class="header-inner">
-          <div class="header-title"><span>Pondetuparte</span></div>
+          <div class="header-title"><span>Pondetuparte - Administración</span></div>
 
           <!-- 
             HEADER NAV
           -->
 
-          <ul class="header-nav nav">
+          <ul class="header-nav nav nav-horizontal">
 
             <!-- TODO : Dropdown menu -->
            
             <li>
               <ul class="menu user-menu">
                 <img class="user-picture" src="https://avatars0.githubusercontent.com/u/1231888?v=3&s=460" />
-                <span class="user-name">Daniel Flores</span>
+                <span class="user-name">{{user.nombres}}</span>
                 <div class="caret"></div>
               </ul>
             </li>
 
-           <!--<li><a href="#" title="Salir">salir</a></li>-->
+            <li><a class="link white" ng-href="/logout" target="_self" title="Salir">salir</a></li>
 
           </ul>
 
@@ -65,7 +65,7 @@
               <ul class="nav nav-vertical">
                 <li class="nav-title">Entidades</li>
 
-                <li><a class="link white" href="#" title="Usuarios">Usuarios</a></li>
+                <li><a class="link white" href="/admin/users" title="Usuarios">Usuarios</a></li>
                 
                 <li><a class="link white" href="/#/user-commitments/" title="Compromisos">Compromisos</a></li>
                 <li><a class="link white" href="#" title="Evidencias">Evidencias</a></li>
@@ -89,6 +89,6 @@
         </div>
       </div>
 
-      <script src="js/main.js"></script>
+      <script src="/assets/admin/js/main.js"></script>
   </body>
 </html>

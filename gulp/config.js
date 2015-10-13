@@ -1,4 +1,4 @@
-'use strict';
+'use strict'; 
 
 module.exports = {
 
@@ -31,6 +31,7 @@ module.exports = {
   'views': {
     'watch': [
       'app/index.html',
+      'app/views/*.html',
       'app/views/**/*.html'
     ],
     'src': 'app/views/**/*.html',

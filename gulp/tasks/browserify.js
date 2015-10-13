@@ -17,6 +17,8 @@ var browserSync  = require('browser-sync');
 var debowerify   = require('debowerify');
 var ngAnnotate   = require('browserify-ngannotate');
 
+var stringify = require('stringify');
+
 // Based on: http://blog.avisi.nl/2014/04/25/how-to-keep-a-fast-build-with-browserify-and-reactjs/
 function buildScript(file) {
 
@@ -35,17 +37,20 @@ function buildScript(file) {
     });
   }
 
+  bundler.transform(stringify(['.html']));
+
   var transforms = [
     { 'name':babelify, 'options': {}},
     { 'name':debowerify, 'options': {}},
     { 'name':ngAnnotate, 'options': {}},
     { 'name':'brfs', 'options': {}},
-    { 'name':'bulkify', 'options': {}}
+    { 'name':'bulkify', 'options': {}},
   ];
 
   transforms.forEach(function(transform) {
     bundler.transform(transform.name, transform.options);
   });
+
 
   function rebundle() {
     var stream = bundler.bundle();

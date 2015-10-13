@@ -1,14 +1,16 @@
+'use strict';
+
 angular.module('pdtp.admin.utils')
-.factory('AuthInterceptor', ['LocalStorage', '$rootScope', '$q', 'AppSettings',
-  function(LocalStorage, $rootScope, $q, AppSettings) {
+.factory('AuthInterceptor', ['$cookies', '$rootScope', '$q', 'AppSettings',
+  function($cookies, $rootScope, $q, AppSettings) {
     return {
      request: function (config) {
 
        config.headers = config.headers || {};
 
        if(config.url != (AppSettings.API_URL + '/auth/login/')){
-         if(LocalStorage.get('token'))
-           config.headers.Authorization = 'Token ' + LocalStorage.get('token');
+         if($cookies.get("token"))
+           config.headers.Authorization = 'Bearer ' + $cookies.get("token");
        }
 
        return config;

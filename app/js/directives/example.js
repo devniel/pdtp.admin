@@ -2,11 +2,12 @@
 
 var directivesModule = require('./_index.js');
 
+console.log("WAT");
+
 /**
  * @ngInject
  */
 function exampleDirective() {
-
   return {
     restrict: 'EA',
     link: function(scope, element) {

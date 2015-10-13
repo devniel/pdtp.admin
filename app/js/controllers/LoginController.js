@@ -1,3 +1,5 @@
+'use strict';
+
 /**
 * LoginController
 * @namespace pdtp.admin.controllers

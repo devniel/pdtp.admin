@@ -4,6 +4,7 @@ var angular = require('angular');
 
 // angular modules
 require('angular-ui-router');
+require('angular-cookies');
 require('./templates');
 require('./utils/_index');
 require('./controllers/_index');
@@ -15,6 +16,7 @@ angular.element(document).ready(function() {
 
   var requires = [
     'ui.router',
+    'ngCookies',
     'templates',
     'pdtp.admin.utils',
     'pdtp.admin.controllers',

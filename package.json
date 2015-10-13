@@ -28,7 +28,7 @@
     "angular-ui-router": "^0.2.13",
     "babelify": "^5.0.4",
     "brfs": "^1.2.0",
-    "browser-sync": "^2.7.6",
+    "browser-sync": "^2.9.11",
     "browserify": "^5.10.0",
     "browserify-istanbul": "^0.2.0",
     "browserify-ngannotate": "^0.1.0",
@@ -68,6 +68,7 @@
     "pretty-hrtime": "^0.2.2",
     "protractor": "^1.2.0",
     "run-sequence": "^0.3.6",
+    "stringify": "^3.1.0",
     "tiny-lr": "0.0.9",
     "uglifyify": "^2.5.0",
     "vinyl-buffer": "^1.0.0",
@@ -79,5 +80,8 @@
     "test": "karma start test/karma.conf.js",
     "preprotractor": "npm run update-webdriver",
     "protractor": "npm run protractor test/protractor.conf.js"
+  },
+  "dependencies": {
+    "angular-cookies": "^1.4.7"
   }
 }
