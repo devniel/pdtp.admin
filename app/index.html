@@ -7,12 +7,8 @@
       <title ng-bind="pageTitle"></title>
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width">
-
-
       <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:400,500,600,700,800,900' rel='stylesheet' type='text/css'>
-
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
       <link rel="stylesheet" href="/assets/admin/css/main.css">
   </head>
   <body ng-controller="AppCtrl" ng-cloak>
@@ -23,7 +19,11 @@
 
       <div class="header">
         <div class="header-inner">
-          <div class="header-title"><span>Pondetuparte - Administración</span></div>
+          <div class="header-title">
+            <a href="/admin" class="link black no-opacity">
+              <img class="header-title-logo" src="/assets/admin/images/pdtp.png" title="Pondetuparte.com"/> Pondetuparte.com
+            </a>
+          </div>
 
           <!-- 
             HEADER NAV
@@ -31,17 +31,12 @@
 
           <ul class="header-nav nav nav-horizontal">
 
-            <!-- TODO : Dropdown menu -->
-           
             <li>
               <ul class="menu user-menu">
                 <img class="user-picture" src="https://avatars0.githubusercontent.com/u/1231888?v=3&s=460" />
                 <span class="user-name">{{user.nombres}}</span>
-                <div class="caret"></div>
               </ul>
             </li>
-
-            <li><a class="link white" ng-href="/logout" target="_self" title="Salir">salir</a></li>
 
           </ul>
 
@@ -49,39 +44,51 @@
       </div>
 
       <!-- 
+        SIDEBAR 
+      -->
+
+      <div class="sidebar">
+
+        <div class="sidebar-box">
+          <div class="sidebar-box-header"><i class="fa fa-database"></i>&nbsp; Datos</div>
+          <div class="sidebar-box-body">
+            <ul class="nav nav-vertical">
+
+              <li><a class="link white" ng-class="{selected : currentPage == '/admin/users'}" href="/admin/users" title="Usuarios" ng-click="changePage('/admin/users')">Usuarios</a></li>
+              
+              <li><a class="link white" ng-class="{selected : currentPage == '/admin/user-commitments'}" href="/admin/user-commitments" title="Compromisos">Compromisos</a></li>
+              <li><a class="link white" ng-class="{selected : currentPage == '/admin/evidences'}" href="/admin/evidences" title="Evidencias">Evidencias</a></li>
+              <li><a class="link white" ng-class="{selected : currentPage == '/admin/institutions'}" href="/admin/institutions" title="Instituciones">Instituciones</a></li>
+
+              <li><a class="link white" ng-class="{selected : currentPage == '/admin/institutions_types'}" href="/admin/institutions_types" title="Tipos de Instituciones">Tipos de Instituciones</a></li>
+              <li><a class="link white" ng-class="{selected : currentPage == '/admin/commitments'}" href="/admin/commitments" title="Tipos de Compromisos">Tipos de Compromisos</a></li>
+
+            </ul>
+          </div>
+        </div>
+
+        <div class="sidebar-box">
+          <div class="sidebar-box-header"><i class="fa fa-plug"></i>&nbsp; Acciones</div>
+          <div class="sidebar-box-body">
+            <ul class="nav nav-vertical">
+
+              <li><a class="link white" ng-href="/logout" target="_self" title="Usuarios"> Salir</a></li>
+              
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 
         BODY
       -->
 
-      <div class="body ">
+      <div class="body">
         <div class="layout-grid-12">
-
-          <!-- SIDEBAR -->
-
-          <div class="layout-col-3">
-            <div class="sidebar">
-
-              <!-- SIDEBAR MENU -->
-
-              <ul class="nav nav-vertical">
-                <li class="nav-title">Entidades</li>
-
-                <li><a class="link white" href="/admin/users" title="Usuarios">Usuarios</a></li>
-                
-                <li><a class="link white" href="/#/user-commitments/" title="Compromisos">Compromisos</a></li>
-                <li><a class="link white" href="#" title="Evidencias">Evidencias</a></li>
-                <li><a class="link white" href="#" title="Instituciones">Instituciones</a></li>
-
-                <li><a class="link white" href="#" title="Tipos de Instituciones">Tipos de Instituciones</a></li>
-                <li><a class="link white" href="#" title="Tipos de Compromisos">Tipos de Compromisos</a></li>
-
-              </ul>
-
-            </div>
-          </div>
-
           <!-- MENU -->
 
-          <div class="layout-col-9">
+          <div class="layout-col-12">
             <div class="main" ui-view>
             </div>
           </div>

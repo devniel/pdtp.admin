@@ -5,9 +5,13 @@ var directivesModule = require('./_index.js');
 /**
  * @ngInject
  */
-function exampleDirective() {
+function user() {
   return {
     restrict: 'EA',
+    scope : {
+    	user : '=data'
+    },
+    template : require("./../../templates/User.html"),
     link: function(scope, element) {
       element.on('click', function() {
         console.log('element clicked');
@@ -17,4 +21,4 @@ function exampleDirective() {
 
 }
 
-directivesModule.directive('exampleDirective', exampleDirective);
+directivesModule.directive('user', user);

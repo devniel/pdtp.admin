@@ -1,0 +1,15 @@
+<div class="user">
+	<div class="user-picture">
+		<div ng-if="user.foto_tipo == 1">
+		 	<img title="{{user.nombres}}" src="http://graph.facebook.com/{{user.fid}}/picture?type=normal"/>
+		</div>
+
+		<div ng-if="user.foto_tipo == 0">
+			<img title="{{user.nombres}}" src="https://dal05.objectstorage.softlayer.net/v1/AUTH_2809ef13-5269-47b8-a204-8e6adeaf53f6/PDTP/users/{{user.foto}}" />
+		</div>
+	</div>
+	<div class="user-info">
+		<div class="user-name">{{user.nombres}}</div>
+		<div class="user-username">{{user.username}}</div>
+	</div>
+</div>

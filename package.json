@@ -82,6 +82,8 @@
     "protractor": "npm run protractor test/protractor.conf.js"
   },
   "dependencies": {
-    "angular-cookies": "^1.4.7"
+    "angular-busy": "^4.1.0",
+    "angular-cookies": "^1.4.7",
+    "angular-ui-bootstrap": "^0.14.2"
   }
 }

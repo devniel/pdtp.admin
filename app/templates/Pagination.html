@@ -1,0 +1,8 @@
+<ul class="pagination">
+	<li ng-click="toStart()"><i class="fa fa-angle-double-left"></i></li>
+	<li ng-click="toBack()"><i class="fa fa-angle-left"></i></li>
+		<li ng-repeat="page in pages" class="pagination-page" ng-click="toPage(page)" ng-class="{selected : page.number == currentPage}">{{page.number}}</li>
+
+	<li ng-click="toEnd()"><i class="fa fa-angle-double-right"></i></li>
+	<li ng-click="toNext()"><i class="fa fa-angle-right"></i></li>
+</ul>

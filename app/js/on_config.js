@@ -23,10 +23,17 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $httpPr
 		title: 'Home'
 	})
 	.state('Users', {
-		url: '/admin/users',
+		url: '/admin/users?page',
 		controller: 'UsersCtrl',
 		templateUrl: 'users.html',
-		title: 'Home'
+		title: 'Home',
+		params : {
+			page : {
+				value : '1',
+				squash : true
+			}
+		}
+
 	});
 
 	$stateProvider
