@@ -4,6 +4,7 @@ var angular = require('angular');
 
 // angular modules
 require('angular-ui-router');
+require('angular-busy/dist/angular-busy.min.js');
 require('angular-cookies');
 require('./templates');
 require('./utils/_index');
@@ -16,6 +17,7 @@ angular.element(document).ready(function() {
 
   var requires = [
     'ui.router',
+    'cgBusy',
     'ngCookies',
     'templates',
     'pdtp.admin.utils',

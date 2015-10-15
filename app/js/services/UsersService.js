@@ -47,11 +47,15 @@ angular
     /**
     * COUNT
     */
-    var count = function(){
+    var count = function(query){
 
       var deferred = $q.defer();
 
-      return $http.get(AppSettings.API_V2_URL + '/users/count', {})
+      var query = query || '';
+
+      console.log("QUERY ===> ", query);
+
+      return $http.get(AppSettings.API_V2_URL + '/users/count?query=' + query, {})
       .success(function(response){
         deferred.resolve(response);
       })
@@ -77,11 +81,11 @@ angular
     /**
     * SEARCH
     */
-    var search = function(query){
+    var search = function(query, page, quantity){
 
       var deferred = $q.defer();
 
-      return $http.get(AppSettings.API_V2_URL + '/users/search?query=' + query, {})
+      return $http.get(AppSettings.API_V2_URL + '/users/search?query=' + query + "&page=" + page + "&quantity=" + quantity , {})
       .success(function(response){
         deferred.resolve(response);
       })

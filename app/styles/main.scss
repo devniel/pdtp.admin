@@ -154,6 +154,10 @@ body {
 				height: 32px;
 				margin-right: 7px;
 			}
+
+			.header-title-subtitle {
+		   		opacity: 0.5;
+			}
 		}
 
 		.header-nav {
@@ -394,6 +398,10 @@ div[class*='layout-grid-'] + div[class*='layout-grid-'] {
 
 // TABLES
 
+.table-wrapper {
+	background: #FFF;
+}
+
 .table-users-wrapper {
 	border-radius: 3px;
 	margin-top: 0px;
@@ -547,3 +555,67 @@ div[class*='layout-grid-'] + div[class*='layout-grid-'] {
 
 	}
 }
+
+// BUTTONS
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+.btn {
+	border: none;
+	padding: 6px;
+	color: #FFF;
+	background: #465F9A;
+	border-radius: 3px;
+	/* margin-left: -28px; */
+	/* box-shadow: 1px 1px 1px rgb(83, 104, 154); */
+	cursor: pointer;
+
+	&:hover {
+		background: #3A4E7D;
+	}
+}
+
+// LOADER
+
+#mask { 
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #F6F6F6;
+	z-index: 10000;
+	height: 100%; 
+}
+
+#mask2 { 
+	width: 100%; 
+	background-color: transparent !important;
+	z-index: 10000;
+	height: 100%; 
+	min-height:300px; 
+	position:relative; 
+}
+
+#loader {
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	background-image: url("/assets/img/loading_pdtp.gif");
+	background-size: 32px 32px;
+	background-repeat: no-repeat;
+	background-position: center;
+	margin: -100px 0 0 -100px; 
+}
+
+
+// LIBS
+
+@import "../../node_modules/angular-busy/dist/angular-busy";
