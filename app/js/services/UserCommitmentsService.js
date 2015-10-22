@@ -1,12 +1,12 @@
 /**
-* UsersService
+* UserCommitmentsService
 * @namespace pdtp.admin.services
 * based on : http://devdactic.com/user-auth-angularjs-ionic/
 */
 
 angular
   .module('pdtp.admin.services')
-  .service('UsersService', function($http, $q, AppSettings) {
+  .service('UserCommitmentsService', function($http, $q, AppSettings) {
 
     /**
     * LIST
@@ -21,7 +21,7 @@ angular
 
       var deferred = $q.defer();
 
-      return $http.get(AppSettings.API_V2_URL + '/users/list?page=' + page + '&quantity=' + quantity, {})
+      return $http.get(AppSettings.API_V2_URL + '/users-commitments/list?page=' + page + '&quantity=' + quantity, {})
       .success(function(response){
         deferred.resolve(response);
       })
@@ -55,7 +55,7 @@ angular
 
       console.log("QUERY ===> ", query);
 
-      return $http.get(AppSettings.API_V2_URL + '/users/count?query=' + query, {})
+      return $http.get(AppSettings.API_V2_URL + '/users-commitments/count?query=' + query, {})
       .success(function(response){
         deferred.resolve(response);
       })
@@ -85,7 +85,7 @@ angular
 
       var deferred = $q.defer();
 
-      return $http.get(AppSettings.API_V2_URL + '/users/search?query=' + query + "&page=" + page + "&quantity=" + quantity , {})
+      return $http.get(AppSettings.API_V2_URL + '/users-commitments/search?query=' + query + "&page=" + page + "&quantity=" + quantity , {})
       .success(function(response){
         deferred.resolve(response);
       })

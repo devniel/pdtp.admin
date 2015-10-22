@@ -26,7 +26,7 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $httpPr
 		url: '/admin/users?page&search',
 		controller: 'UsersCtrl',
 		templateUrl: 'users.html',
-		title: 'Home',
+		title: 'Users',
 		params : {
 			page : {
 				value : '1',
@@ -42,10 +42,20 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $httpPr
 
 	$stateProvider
 	.state('User Commitments', {
-		url: '/admin/user-commitments/',
+		url: '/admin/user-commitments?page&search',
 		controller: 'UserCommitmentsCtrl',
 		templateUrl: 'user-commitments.html',
-		title: 'Users Commitments'
+		title: 'Users Commitments',
+		params : {
+			page : {
+				value : '1',
+				squash : true
+			},
+			search : {
+				value : null,
+				squash : true
+			}
+		}
 	});
 
 	$urlRouterProvider.otherwise('/admin/users');
