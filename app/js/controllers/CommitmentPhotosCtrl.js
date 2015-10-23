@@ -7,9 +7,10 @@
 
 angular
 .module('pdtp.admin.controllers')
-.controller('UserCommitmentsCtrl', function ($scope, UserCommitmentsService, $state, $stateParams){
+.controller('CommitmentPhotosCtrl', function ($scope, CommitmentPhotosService, $state, $stateParams){
 
-  $scope.userCommitments = [];
+  $scope.commitmentPhotos = [];
+
   $scope.quantity = 50;
   $scope.page = parseInt($stateParams.page, 10) || 1;
   $scope.total = 0;
@@ -26,15 +27,17 @@ angular
    * @param  {Number} quantity
    */
   $scope.list = function(page, quantity){
-    $scope.loading = UserCommitmentsService
+
+    $scope.loading = CommitmentPhotosService
     .list(page, quantity)
     .success(function(response){
       
-      $scope.userCommitments = response.data;
-      for(var i in $scope.userCommitments)
-        $scope.userCommitments[i].fecha_creacion = new Date($scope.userCommitments[i].fecha_creacion);
+      $scope.commitmentPhotos = response.data;
 
-      console.log($scope.userCommitments);
+      for(var i in $scope.commitmentPhotos)
+        $scope.commitmentPhotos[i].fecha_creacion = new Date($scope.commitmentPhotos[i].fecha_creacion);
+
+      console.log($scope.commitmentPhotos);
 
     })
     .error(function(err){
@@ -69,41 +72,37 @@ angular
   
   if($scope.query != null && $scope.query != undefined && $scope.query.length > 0){
 
-    $scope.userCommitments = [];
+    $scope.commitmentPhotos = [];
     $scope.total = 0;
     $scope.page = $scope.page || 1;
     $scope.noResults = false;
 
-    UserCommitmentsService.count($scope.query).success(function(response){
+    CommitmentPhotosService.count($scope.query).success(function(response){
       $scope.total = response.data.total;    
     });
 
-    $scope.loading = UserCommitmentsService.search($scope.query, $scope.page, $scope.quantity).success(function(response){
+    $scope.loading = CommitmentPhotosService.search($scope.query, $scope.page, $scope.quantity).success(function(response){
 
       if(response.results.length == 0)
         $scope.noResults = true;
       else
          $scope.noResults = false;
 
-      $scope.userCommitments = response.results;
+      $scope.commitmentPhotos = response.results;
 
       for(var i in $scope.userCommitments)
-        $scope.userCommitments[i].fecha_creacion = new Date($scope.userCommitments[i].fecha_creacion);
+        $scope.commitmentPhotos[i].fecha_creacion = new Date($scope.commitmentPhotos[i].fecha_creacion);
 
     }).error(function(err){
       console.error(err);
     });
 
   }else{
-    UserCommitmentsService.count().success(function(response){
+    CommitmentPhotosService.count().success(function(response){
       $scope.total = response.data.total;    
     });
 
     $scope.list($scope.page, $scope.quantity);
   }
-
-
-
-
 
 });

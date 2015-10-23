@@ -58,6 +58,24 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $httpPr
 		}
 	});
 
+	$stateProvider
+	.state('Commitment Photos', {
+		url: '/admin/commitment-photos?page&search',
+		controller: 'CommitmentPhotosCtrl',
+		templateUrl: 'commitment-photos.html',
+		title: 'Commitment Photos',
+		params : {
+			page : {
+				value : '1',
+				squash : true
+			},
+			search : {
+				value : null,
+				squash : true
+			}
+		}
+	});
+
 	$urlRouterProvider.otherwise('/admin/users');
 
 }
