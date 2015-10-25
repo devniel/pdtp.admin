@@ -53,15 +53,12 @@
           <div class="sidebar-box-header"><i class="fa fa-database"></i>&nbsp; Datos</div>
           <div class="sidebar-box-body">
             <ul class="nav nav-vertical">
-
-              <li><a class="link white" ng-class="{selected : currentPage == '/admin/users'}" href="/admin/users" title="Usuarios" ng-click="changePage('/admin/users')">Usuarios</a></li>
               
-              <li><a class="link white" ng-class="{selected : currentPage == '/admin/user-commitments'}" href="/admin/user-commitments" title="Compromisos">Compromisos</a></li>
-              <li><a class="link white" ng-class="{selected : currentPage == '/admin/commitment-photos'}" href="/admin/commitment-photos" title="Evidencias">Evidencias</a></li>
-              <li><a class="link white" ng-class="{selected : currentPage == '/admin/institutions'}" href="/admin/institutions" title="Instituciones">Instituciones</a></li>
-
-              <li><a class="link white" ng-class="{selected : currentPage == '/admin/institutions_types'}" href="/admin/institutions_types" title="Tipos de Instituciones">Tipos de Instituciones</a></li>
-              <li><a class="link white" ng-class="{selected : currentPage == '/admin/commitments'}" href="/admin/commitments" title="Tipos de Compromisos">Tipos de Compromisos</a></li>
+              <li><a class="link white" ng-class="{selected : currentPage == '/admin/users'}" href="/admin/users" title="Usuarios" ng-click="changePage('/admin/users')">Usuarios</a></li>
+              <li><a class="link white" ng-click="changePage('/admin/user-commitments')" ng-class="{selected : currentPage == '/admin/user-commitments'}" href="/admin/user-commitments" title="Compromisos">Compromisos de Usuarios</a></li>
+              <li><a class="link white" ng-click="changePage('/admin/commitment-photos')" ng-class="{selected : currentPage == '/admin/commitment-photos'}" href="/admin/commitment-photos" title="Evidencias">Evidencias</a></li>
+              <li><a class="link white" ng-click="changePage('/admin/institutions')" ng-class="{selected : currentPage == '/admin/institutions'}" href="/admin/institutions" title="Instituciones">Instituciones</a></li>
+              <li><a class="link white" ng-click="changePage('/admin/commitments')" ng-class="{selected : currentPage == '/admin/commitments'}" href="/admin/commitments" title="Categorías de Compromisos">Compromisos</a></li>
 
             </ul>
           </div>

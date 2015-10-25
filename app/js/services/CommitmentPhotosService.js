@@ -21,7 +21,7 @@ angular
 
       var deferred = $q.defer();
 
-      return $http.get(AppSettings.API_V2_URL + '/commitment-photos/list?page=' + page + '&quantity=' + quantity, {})
+      return $http.get(AppSettings.API_V3_URL + '/commitment-photos/list?page=' + page + '&quantity=' + quantity, {})
       .success(function(response){
         deferred.resolve(response);
       })
@@ -55,7 +55,7 @@ angular
 
       console.log("QUERY ===> ", query);
 
-      return $http.get(AppSettings.API_V2_URL + '/commitment-photos/count?query=' + query, {})
+      return $http.get(AppSettings.API_V3_URL + '/commitment-photos/count?query=' + query, {})
       .success(function(response){
         deferred.resolve(response);
       })
@@ -85,7 +85,7 @@ angular
 
       var deferred = $q.defer();
 
-      return $http.get(AppSettings.API_V2_URL + '/commitment-photos/search?query=' + query + "&page=" + page + "&quantity=" + quantity , {})
+      return $http.get(AppSettings.API_V3_URL + '/commitment-photos/search?query=' + query + "&page=" + page + "&quantity=" + quantity , {})
       .success(function(response){
         deferred.resolve(response);
       })

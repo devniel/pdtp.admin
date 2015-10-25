@@ -18,7 +18,7 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $httpPr
 	$stateProvider
 	.state('Home', {
 		url: '/admin/',
-		controller: 'ExampleCtrl as home',
+		controller: 'AppCtrl as home',
 		templateUrl: 'home.html',
 		title: 'Home'
 	})
@@ -64,6 +64,42 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $httpPr
 		controller: 'CommitmentPhotosCtrl',
 		templateUrl: 'commitment-photos.html',
 		title: 'Commitment Photos',
+		params : {
+			page : {
+				value : '1',
+				squash : true
+			},
+			search : {
+				value : null,
+				squash : true
+			}
+		}
+	});
+
+	$stateProvider
+	.state('Institutions', {
+		url: '/admin/institutions?page&search',
+		controller: 'InstitutionsCtrl',
+		templateUrl: 'institutions.html',
+		title: 'Institutions',
+		params : {
+			page : {
+				value : '1',
+				squash : true
+			},
+			search : {
+				value : null,
+				squash : true
+			}
+		}
+	});
+
+	$stateProvider
+	.state('Commitments', {
+		url: '/admin/commitments?page&search',
+		controller: 'CommitmentsCtrl',
+		templateUrl: 'commitments.html',
+		title: 'Commitments',
 		params : {
 			page : {
 				value : '1',

@@ -11,6 +11,8 @@ app.controller('AppCtrl', function($scope, $location, $state, AuthService) {
 	console.log("Current Path : ", $scope.currentPage);
 	
 	$scope.changePage = function(page){
+
+		console.log("CHANGE ===> ", page);
 		$scope.currentPage = page;
 	}
 

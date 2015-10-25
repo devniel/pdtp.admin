@@ -1,7 +1,7 @@
 <div class="header">
 	<div class="header-inner clearfix">
 		<div class="header-title">
-			Compromisos de usuarios
+			Compromisos
 			<span ng-show="loading.$cgBusyFulfilled == true" class="header-title-subtitle"> - {{total}} encontrados</span>
 		</div>
 		<div class="header-nav">
@@ -33,58 +33,59 @@
 			<div class="table-users table" >
 					<div class="table-head">
 						<div class="table-row">
+							<div class="table-cell">ID</div>
 							<div class="table-cell">Categoría</div>
-							<div class="table-cell table-row-user-commitments-user-name">Usuario</div>
-							<div class="table-cell table-row-user-commitments-user-username">E-mail</div>
-							<div class="table-cell table-row-user-commitments-commitment">Compromiso</div>
+							<div class="table-cell table-commitments-title-es">Título (ES)</div>
+							<div class="table-cell table-commitments-title-en">Título (EN)</div>
 							<div class="table-cell">Activo</div>
 							<div class="table-cell">Fecha creación</div>
 							<div class="table-cell"><i class="fa fa-wrench"></i></div>
 						</div>
 					</div>
 					<div class="table-body">
-						<div class="table-row table-row-user" ng-repeat="userCommitment in userCommitments">
+						<div class="table-row table-row-user" ng-repeat="commitment in commitments">
 							<div class="table-cell">
-								<div ng-if="userCommitment.compromiso_id_categoria_compromiso == 1">
+								{{commitment.id}}
+							</div>
+							<div class="table-cell">
+
+								<div ng-if="commitment.id_categoria_compromiso == 1">
                                     <a href="#!/agua" class="table-cell-commitment-category"><img src="/assets/img/icon/agua.png"/></a>
                                 </div>
-                                <div ng-if="userCommitment.compromiso_id_categoria_compromiso == 2">
+                                <div ng-if="commitment.id_categoria_compromiso == 2">
                                     <a href="#!/carbono" class="table-cell-commitment-category"><img src="/assets/img/icon/carbono.png"/></a>
                                 </div>
-                                <div ng-if="userCommitment.compromiso_id_categoria_compromiso == 3">
+                                <div ng-if="commitment.id_categoria_compromiso == 3">
                                     <a href="#!/energia" class="table-cell-commitment-category"><img src="/assets/img/icon/energia.png"/></a>
                                 </div>
-                                <div ng-if="userCommitment.compromiso_id_categoria_compromiso == 4">
+                                <div ng-if="commitment.id_categoria_compromiso == 4">
                                     <a href="#!/transporte" class="table-cell-commitment-category"><img src="/assets/img/icon/transporte.png"/></a>
                                 </div>
-                                <div ng-if="userCommitment.compromiso_id_categoria_compromiso == 5">
+                                <div ng-if="commitment.id_categoria_compromiso == 5">
                                     <a href="#!/agricultura" class="table-cell-commitment-category"><img src="/assets/img/icon/agricultura.png"/></a>
                                 </div>
-                                <div ng-if="userCommitment.compromiso_id_categoria_compromiso == 6">
+                                <div ng-if="commitment.id_categoria_compromiso == 6">
                                     <a href="#!/reciclaje" class="table-cell-commitment-category"><img src="/assets/img/icon/reciclaje.png"/></a>
                                 </div>
-                                <div ng-if="userCommitment.compromiso_id_categoria_compromiso == 7">
+                                <div ng-if="commitment.id_categoria_compromiso == 7">
                                     <a href="#!/biodiversidad" class="table-cell-commitment-category"><img src="/assets/img/icon/biodiversidad.png"/></a>
                                 </div>
 							</div>
-							<div class="table-cell table-row-user-commitments-user-name">
-								{{userCommitment.usuario_nombres}}
+							<div class="table-cell table-commitments-title-es">
+								<span>{{commitment.titulo_es}}</span>
 							</div>
-							<div class="table-cell table-row-user-commitments-user-username">
-								{{userCommitment.usuario_usuario}}
-							</div>
-							<div class="table-cell table-row-user-commitments-commitment">
-								{{userCommitment.compromiso_titulo_es}}
+							<div class="table-cell table-commitments-title-en">
+								<span>{{commitment.titulo_en}}</span>
 							</div>
 							<div class="table-cell">
-								<div ng-if="userCommitment.activo == 1">
+								<div ng-if="commitment.activo == 1">
 									<i class="fa fa-check green"></i>
 								</div>
-								<div ng-if="userCommitment.activo == 0">
+								<div ng-if="commitment.activo == 0">
 									<i class="fa fa-times red"></i>
 								</div>
 							</div>
-							<div class="table-cell">{{userCommitment.fecha_creacion | date:'dd/MM/yyyy' }}</div>
+							<div class="table-cell">{{commitment.fecha_creacion | date:'dd/MM/yyyy' }}</div>
 							<div class="table-cell table-row-user-actions">
 								<i class="fa fa-eye table-row-user-action"></i>
 								<i class="fa fa-flag table-row-user-action"></i>

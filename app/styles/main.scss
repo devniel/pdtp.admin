@@ -373,6 +373,7 @@ div[class*='layout-grid-'] + div[class*='layout-grid-'] {
 	display: table;
 	width: 100%;
 	background: #FFF;
+	position: relative;
 
 	.table-head {
 		clear: both;
@@ -394,6 +395,17 @@ div[class*='layout-grid-'] + div[class*='layout-grid-'] {
 			vertical-align: middle
 		}
 	}
+}
+
+.table-no-results {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 1;
+	width: 200px;
+	margin-left: -100px;
+	color: #777;
+	text-align: center;
 }
 
 // TABLES
@@ -492,20 +504,28 @@ div[class*='layout-grid-'] + div[class*='layout-grid-'] {
 		&:hover {
 			background: #FAFAFA;
 			cursor: pointer;
-		}
+		}	
 
 		.table-row-user-picture {
-			width: 40px;
-			height: 40px;
-			display: flex;
-			align-items: center;
-			justify-contents: center;
 
-			img {
+			& > div {
+				display: inline-block;
+			}
+
+			.table-row-user-picture-inner {
 				width: 40px;
 				height: 40px;
-				border-radius:20px;
+				display: flex;
+				align-items: center;
+				justify-contents: center;
+
+				img {
+					width: 40px;
+					height: 40px;
+					border-radius:20px;
+				}
 			}
+
 		}
 
 		.table-row-user-actions {
@@ -528,6 +548,60 @@ div[class*='layout-grid-'] + div[class*='layout-grid-'] {
 			}
 		}
 	}
+
+	.table-row-user-name {
+		width: 250px;
+		text-align: left;
+	}
+
+	.table-row-user-username {
+		width: 300px;
+		text-align: left;
+	}
+}
+
+
+/**
+ * Table Commitment Photo
+ */
+
+.table-row-commitment-photos-name {
+	width: 250px;
+	text-align: left !important;
+}
+
+.table-row-commitment-photos-commitment {
+	width: 300px;
+	text-align: left !important;
+}
+
+/**
+ * Table User Commitments
+ */
+
+.table-row-user-commitments-user-name {
+	text-align: left !important;
+	width: 300px;
+}
+
+.table-row-user-commitments-user-username {
+	text-align: left !important;
+	width: 300px;
+}
+
+.table-row-user-commitments-commitment {
+	width: 300px;
+	text-align: left !important;
+}
+
+/**
+ * Table Commitment
+ */
+
+.table-commitments-title-es,
+.table-commitments-title-en {
+	width: 300px;
+	text-align: left !important;
 }
 
 .table-cell-commitment-category {

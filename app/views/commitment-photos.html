@@ -33,8 +33,9 @@
 			<div class="table-users table" >
 					<div class="table-head">
 						<div class="table-row">
-							<div class="table-cell">Usuario</div>
-							<div class="table-cell">Compromiso</div>
+							<div class="table-cell">Categoría</div>
+							<div class="table-cell table-row-commitment-photos-name">Usuario</div>
+							<div class="table-cell table-row-commitment-photos-commitment">Compromiso</div>
 							<div class="table-cell">Foto</div>
 							<div class="table-cell">Activo</div>
 							<div class="table-cell">Fecha creación</div>
@@ -44,10 +45,6 @@
 					<div class="table-body">
 						<div class="table-row table-row-user" ng-repeat="commitmentPhoto in commitmentPhotos">
 							<div class="table-cell">
-								{{commitmentPhoto.usuario_nombres}}
-							</div>
-							<div class="table-cell">
-
 								<div ng-if="commitmentPhoto.compromiso_id_categoria_compromiso == 1">
                                     <a href="#!/agua" class="table-cell-commitment-category"><img src="/assets/img/icon/agua.png"/></a>
                                 </div>
@@ -69,7 +66,11 @@
                                 <div ng-if="commitmentPhoto.compromiso_id_categoria_compromiso == 7">
                                     <a href="#!/biodiversidad" class="table-cell-commitment-category"><img src="/assets/img/icon/biodiversidad.png"/></a>
                                 </div>
-
+							</div>
+							<div class="table-cell table-row-commitment-photos-name">
+								{{commitmentPhoto.usuario_nombres}}
+							</div>
+							<div class="table-cell table-row-commitment-photos-commitment">
 								{{commitmentPhoto.compromiso_titulo_es}}
 							</div>
 							<div class="table-cell">
