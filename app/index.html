@@ -55,11 +55,22 @@
             <ul class="nav nav-vertical">
               
               <li><a class="link white" ng-class="{selected : currentPage == '/admin/users'}" href="/admin/users" title="Usuarios" ng-click="changePage('/admin/users')">Usuarios</a></li>
-              <li><a class="link white" ng-click="changePage('/admin/user-commitments')" ng-class="{selected : currentPage == '/admin/user-commitments'}" href="/admin/user-commitments" title="Compromisos">Compromisos de Usuarios</a></li>
               <li><a class="link white" ng-click="changePage('/admin/commitment-photos')" ng-class="{selected : currentPage == '/admin/commitment-photos'}" href="/admin/commitment-photos" title="Evidencias">Evidencias</a></li>
               <li><a class="link white" ng-click="changePage('/admin/institutions')" ng-class="{selected : currentPage == '/admin/institutions'}" href="/admin/institutions" title="Instituciones">Instituciones</a></li>
-              <li><a class="link white" ng-click="changePage('/admin/commitments')" ng-class="{selected : currentPage == '/admin/commitments'}" href="/admin/commitments" title="Categorías de Compromisos">Compromisos</a></li>
+              <li><a class="link white" ng-click="changePage('/admin/commitments')" ng-class="{selected : currentPage == '/admin/commitments'}" href="/admin/commitments" title="Categorías de Compromisos">Tipos de Compromisos</a></li>
+              <li><a class="link white" ng-click="changePage('/admin/user-commitments')" ng-class="{selected : currentPage == '/admin/user-commitments'}" href="/admin/user-commitments" title="Compromisos">Compromisos de Usuarios</a></li>
 
+            </ul>
+          </div>
+        </div>
+
+        <div class="sidebar-box">
+          <div class="sidebar-box-header"><i class="fa fa-upload"></i>&nbsp; Importar</div>
+          <div class="sidebar-box-body">
+            <ul class="nav nav-vertical">
+
+              <li><a class="link white" ng-click="changePage('/admin/import/user-commitments')" ng-class="{selected : currentPage == '/admin/import/user-commitments'}" ng-href="/admin/import/user-commitments" target="_self" title="Nuevos compromisos de usuarios"> Compromisos de usuarios</a></li>
+              
             </ul>
           </div>
         </div>

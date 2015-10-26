@@ -19,6 +19,7 @@ angular.element(document).ready(function() {
     'ui.router',
     'cgBusy',
     'ngCookies',
+    'ngFileUpload',
     'templates',
     'pdtp.admin.utils',
     'pdtp.admin.controllers',

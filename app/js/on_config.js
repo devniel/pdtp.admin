@@ -112,6 +112,15 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $httpPr
 		}
 	});
 
+	$stateProvider
+	.state('Import User Commitments', {
+		url: '/admin/import/user-commitments',
+		controller: 'ImportUserCommitmentsCtrl',
+		templateUrl: 'import-user-commitments.html',
+		title: 'Import User Commitments'
+	});
+
+
 	$urlRouterProvider.otherwise('/admin/users');
 
 }
